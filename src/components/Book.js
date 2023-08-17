@@ -1,31 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function Book() {
-  const [book, setBook] = useState([
-    { title: 'clean code', author: 'robert martin', id: 1 },
-    { title: 'Introduction to Algorithms', author: 'thomas cormen', id: 2 },
-    { title: 'eloquent javascript', author: 'Marijn Haverbeke', id: 3 },
-  ]);
-
+function Book({ title, author, id }) {
   const handelDelete = (e) => {
     e.preventDefault();
-    setBook([...book]);
   };
 
   return (
     <div className="add-book-container">
-      <h2 className="add-book-title">Book List</h2>
-      <div>
-        {book.map((book) => (
-          <div className="book-container" key={book.id}>
-            <p className="book-title">{book.title}</p>
-            <p className="book-author">{book.author}</p>
-            <button type="button" onClick={handelDelete}>Delete</button>
-          </div>
-        ))}
+      <div className="book-container" key={id}>
+        <p className="book-title">{title}</p>
+        <p className="book-author">{author}</p>
+        <button type="button" onClick={handelDelete}>Delete</button>
       </div>
     </div>
   );
 }
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
 
 export default Book;
