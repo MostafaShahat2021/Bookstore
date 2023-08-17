@@ -13,13 +13,13 @@ function Book() {
   };
 
   return (
-    <div>
-      <h2>Book List</h2>
+    <div className="add-book-container">
+      <h2 className="add-book-title">Book List</h2>
       <div>
         {book.map((book) => (
-          <div key={book.id}>
-            <p>{book.title}</p>
-            <p>{book.author}</p>
+          <div className="book-container" key={book.id}>
+            <p className="book-title">{book.title}</p>
+            <p className="book-author">{book.author}</p>
             <button type="button" onClick={handelDelete}>Delete</button>
           </div>
         ))}

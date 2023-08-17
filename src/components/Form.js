@@ -7,13 +7,15 @@ function Form() {
 
   return (
     <div>
-      <h2>Add new book</h2>
-      <form>
+      <h2 className="form-title">Add new book</h2>
+      <form className="form-container">
         <input
+          className="title-input"
           type="text"
           placeholder="Book title"
         />
         <input
+          className="author-input"
           type="text"
           placeholder="Author"
         />

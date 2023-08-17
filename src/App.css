@@ -1,0 +1,48 @@
+ul {
+  display: flex;
+  justify-content:flex-start;
+  gap: 3rem;
+  padding: 2rem;
+  width: 90%;
+  list-style: none;
+  font-size: larger;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a.active {
+  color: blue;
+}
+
+.book-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.book-title, .book-author {
+  width: 20%;
+  margin: 1rem auto;
+}
+
+.form-title, .add-book-title {
+  margin: 2rem auto;
+  width: 50%;
+  text-align: center;
+}
+.form-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title-input, .author-input {
+  width: 20%;
+}
