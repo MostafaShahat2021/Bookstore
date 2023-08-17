@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Categories from './components/Categories';
+import NotFound from './components/NotFound';
 
 import './App.css';
 
@@ -10,8 +12,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/categories" element={<div><h1>Categories</h1></div>} />
-        <Route path="*" element={<div><h1>Page not found!</h1></div>} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
