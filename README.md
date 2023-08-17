@@ -39,11 +39,11 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="">React</a></li>
-    <li><a href="">Redux</a></li>
-    <li><a href="">JavaScript(ES6)</a></li>
-    <li><a href="">Css</a></li>
-    <li><a href="">HTML</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript(ES6)</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">Css</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
   </ul>
 </details>
 
