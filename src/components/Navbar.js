@@ -5,6 +5,7 @@ function Navbar() {
   return (
     <nav>
       <ul>
+        <li><h1>BookStore CMS</h1></li>
         <li>
           <NavLink to="/">Home</NavLink>
         </li>

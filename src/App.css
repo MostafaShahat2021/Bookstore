@@ -1,6 +1,7 @@
 ul {
   display: flex;
   justify-content:flex-start;
+  align-items: center;
   gap: 3rem;
   padding: 2rem;
   width: 90%;
@@ -8,9 +9,13 @@ ul {
   font-size: larger;
 }
 
+ul li h1 {
+  color: blue;
+}
+
 a {
   text-decoration: none;
-  color: black;
+  color: gray;
 }
 
 a.active {
