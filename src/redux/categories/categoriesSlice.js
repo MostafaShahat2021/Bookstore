@@ -4,10 +4,13 @@ const initialState = {
   categories: [],
 };
 
-const categories = createSlice({
+const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
-  reducers: {},
+  reducers: {
+    checkStatus: () => 'Under construction',
+  },
 });
 
-export default categories.reducer;
+export const { checkStatus } = categoriesSlice.actions;
+export default categoriesSlice.reducer;
