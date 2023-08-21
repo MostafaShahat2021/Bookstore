@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   categories: [],
@@ -7,9 +7,7 @@ const initialState = {
 const categories = createSlice({
   name: 'categories',
   initialState,
-  reducers: {
-
-  },
+  reducers: {},
 });
 
 export default categories.reducer;
