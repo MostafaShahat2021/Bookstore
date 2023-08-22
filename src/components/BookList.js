@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
-// import { nanoid } from '@reduxjs/toolkit';
-// import Book from './Book';
 
 function BookList() {
   // const id = nanoid();
