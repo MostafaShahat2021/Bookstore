@@ -10,7 +10,7 @@ function BookList() {
       <h2 className="add-book-title">Book List</h2>
       <div>
         {books.map((book) => (
-          <div className="add-book-container" key={book.item_id}>
+          <div className="add-book-container" key={book.item_id || book.id}>
             <div className="book-container">
               <p className="book-title">{book.title}</p>
               <p className="book-author">{book.author}</p>
