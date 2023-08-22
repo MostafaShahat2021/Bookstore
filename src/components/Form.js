@@ -14,7 +14,7 @@ function Form() {
     if (title.trim() === '' || author.trim() === '') {
       return;
     }
-    dispatch(addBook({ id, title, author }));
+    dispatch(addBook({ item_id: id, title, author }));
     setTitle('');
     setauthor('');
   };
