@@ -3,20 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks, deleteBook } from '../redux/books/booksSlice';
 
 function BookList() {
-  // const id = nanoid();
   const { books, isLoading, error } = useSelector((state) => state.books);
   const dispatch = useDispatch();
-
-  // const { isLoading } = useSelector((state) => state.books.isLoading);
-  // console.log(isLoading);
 
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
-  // if (isLoading) {
-  //   return <h4>Loading...</h4>;
-  // }
   return (
     <div>
       <h2 className="add-book-title">Book List</h2>

@@ -7,10 +7,6 @@ function Form() {
   const [title, setTitle] = useState('');
   const [author, setauthor] = useState('');
   const dispatch = useDispatch();
-  // const id = nanoid();
-  // const [book] = useState({
-  //   item_id: id, title, author, category: 'story',
-  // });
 
   const handelAddBookClick = (e) => {
     e.preventDefault();
@@ -24,9 +20,6 @@ function Form() {
       category: 'story',
     };
     dispatch(postBook(newBook));
-    // dispatch(addBook({
-    //   item_id: id, title, author, category: 'story',
-    // }));
     setTitle('');
     setauthor('');
   };

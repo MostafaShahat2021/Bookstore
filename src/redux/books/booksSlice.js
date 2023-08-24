@@ -3,12 +3,10 @@ import axios from 'axios';
 
 const API_ID = 'o8gNWqHyTvWh03hlvQfO';
 const BASE_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${API_ID}/books`;
-// console.log(BASE_URL);
 
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   try {
     const response = await axios.get(BASE_URL);
-    // console.log(response);
     return response.data;
   } catch (error) {
     throw new Error('Failed to fetch books');
@@ -57,7 +55,6 @@ const booksSlice = createSlice({
       }))
       .addCase(fetchBooks.fulfilled, (state, action) => {
         const booksList = action.payload;
-        // console.log(booksList);
         const newBooksList = [];
         Object.keys(booksList).forEach((book) => {
           newBooksList.push({
