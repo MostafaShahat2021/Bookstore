@@ -15,6 +15,15 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   }
 });
 
+export const postBook = createAsyncThunk('books/postBook', async (book) => {
+  try {
+    const response = await axios.post(BASE_URL, book);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+});
+
 const initialState = {
   books: [],
   isloading: true,
@@ -61,6 +70,14 @@ const booksSlice = createSlice({
       .addCase(fetchBooks.rejected, (state) => ({
         ...state,
         isloading: false,
+      }))
+      .addCase(postBook.pending, (state) => ({
+        ...state,
+        isBookAdded: false,
+      }))
+      .addCase(postBook.fulfilled, (state) => ({
+        ...state,
+        isBookAdded: true,
       }));
   },
 });
