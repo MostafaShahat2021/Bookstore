@@ -1,26 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const API_ID = 'o8gNWqHyTvWh03hlvQfO';
+const BASE_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${API_ID}/books`;
+// console.log(BASE_URL);
+
+export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
+  try {
+    const response = await axios.get(BASE_URL);
+    // console.log(response);
+    return response.data;
+  } catch (error) {
+    throw new Error('Failed to fetch books');
+  }
+});
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
+  isloading: true,
+  isBookAdded: true,
+  isBookDeleted: true,
 };
 
 const booksSlice = createSlice({
@@ -31,8 +30,38 @@ const booksSlice = createSlice({
       state.books.push(action.payload);
     },
     removeBook: (state, action) => {
-      state.books = state.books.filter((book) => book.item_id !== action.payload);
+      state.books = state.books.filter(
+        (book) => book.item_id !== action.payload,
+      );
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchBooks.pending, (state) => ({
+        ...state,
+        isloading: true,
+      }))
+      .addCase(fetchBooks.fulfilled, (state, action) => {
+        const booksList = action.payload;
+        // console.log(booksList);
+        const newBooksList = [];
+        Object.keys(booksList).forEach((book) => {
+          newBooksList.push({
+            item_id: book,
+            title: booksList[book][0].title,
+            author: booksList[book][0].author,
+          });
+        });
+        return ({
+          ...state,
+          books: newBooksList,
+          isloading: false,
+        });
+      })
+      .addCase(fetchBooks.rejected, (state) => ({
+        ...state,
+        isloading: false,
+      }));
   },
 });
 
