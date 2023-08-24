@@ -40,9 +40,8 @@ export const deleteBook = createAsyncThunk(
 
 const initialState = {
   books: [],
-  isloading: true,
-  isBookAdded: true,
-  isBookDeleted: true,
+  isLoading: false,
+  error: null,
 };
 
 const booksSlice = createSlice({
@@ -53,7 +52,8 @@ const booksSlice = createSlice({
     builder
       .addCase(fetchBooks.pending, (state) => ({
         ...state,
-        isloading: true,
+        isLoading: true,
+        error: null,
       }))
       .addCase(fetchBooks.fulfilled, (state, action) => {
         const booksList = action.payload;
@@ -70,28 +70,26 @@ const booksSlice = createSlice({
         return {
           ...state,
           books: newBooksList,
-          isloading: false,
+          isLoading: false,
+          error: null,
         };
       })
       .addCase(fetchBooks.rejected, (state) => ({
         ...state,
-        isloading: false,
+        isLoading: false,
+        error: true,
       }))
       .addCase(postBook.pending, (state) => ({
         ...state,
-        isBookAdded: false,
       }))
       .addCase(postBook.fulfilled, (state) => ({
         ...state,
-        isBookAdded: true,
       }))
       .addCase(deleteBook.pending, ((state) => ({
         ...state,
-        isBookDeleted: false,
       })))
       .addCase(deleteBook.fulfilled, (state) => ({
         ...state,
-        isBookDeleted: true,
       }));
   },
 });
