@@ -55,3 +55,9 @@ a.active {
 .author-input {
   width: 20%;
 }
+
+.loading {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}

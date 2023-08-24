@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { addBook } from '../redux/books/booksSlice';
+import { postBook } from '../redux/books/booksSlice';
 
 function Form() {
   const [title, setTitle] = useState('');
   const [author, setauthor] = useState('');
   const dispatch = useDispatch();
-  const id = nanoid();
 
   const handelAddBookClick = (e) => {
     e.preventDefault();
     if (title.trim() === '' || author.trim() === '') {
       return;
     }
-    dispatch(addBook({ item_id: id, title, author }));
+    const newBook = {
+      item_id: nanoid(),
+      title,
+      author,
+      category: 'story',
+    };
+    dispatch(postBook(newBook));
     setTitle('');
     setauthor('');
   };
