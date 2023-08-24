@@ -15,14 +15,28 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   }
 });
 
-export const postBook = createAsyncThunk('books/postBook', async (book) => {
+export const postBook = createAsyncThunk('books/postBook', async (book, thunkAPI) => {
   try {
     const response = await axios.post(BASE_URL, book);
+    thunkAPI.dispatch(fetchBooks());
     return response.data;
   } catch (error) {
     return error;
   }
 });
+
+export const deleteBook = createAsyncThunk(
+  'books/deleteBook',
+  async (bookId, thunkAPI) => {
+    try {
+      const response = await axios.delete(`${BASE_URL}/${bookId}`, JSON.stringify({ item_id: bookId }));
+      thunkAPI.dispatch(fetchBooks());
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  },
+);
 
 const initialState = {
   books: [],
@@ -34,16 +48,7 @@ const initialState = {
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.books.push(action.payload);
-    },
-    removeBook: (state, action) => {
-      state.books = state.books.filter(
-        (book) => book.item_id !== action.payload,
-      );
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooks.pending, (state) => ({
@@ -59,13 +64,14 @@ const booksSlice = createSlice({
             item_id: book,
             title: booksList[book][0].title,
             author: booksList[book][0].author,
+            category: 'story',
           });
         });
-        return ({
+        return {
           ...state,
           books: newBooksList,
           isloading: false,
-        });
+        };
       })
       .addCase(fetchBooks.rejected, (state) => ({
         ...state,
@@ -78,6 +84,14 @@ const booksSlice = createSlice({
       .addCase(postBook.fulfilled, (state) => ({
         ...state,
         isBookAdded: true,
+      }))
+      .addCase(deleteBook.pending, ((state) => ({
+        ...state,
+        isBookDeleted: false,
+      })))
+      .addCase(deleteBook.fulfilled, (state) => ({
+        ...state,
+        isBookDeleted: true,
       }));
   },
 });
