@@ -104,14 +104,17 @@ a.active {
 
 .btn-1 {
   padding-right: 1rem;
+  cursor: pointer;
 }
 
 .btn-2 {
   border-right: 1px solid gray;
+  cursor: pointer;
 }
 
 .btn-3 {
   border: none;
+  cursor: pointer;
 }
 
 .progress-container {
@@ -153,12 +156,14 @@ a.active {
 .current-chapter {
   color: gray;
   margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  font-size: small;
 }
 
 .chpter {
   color: #121212;
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 
@@ -168,6 +173,7 @@ a.active {
   width: 10rem;
   height: 2.5rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .form-container {
@@ -177,6 +183,7 @@ a.active {
 .form-title {
   margin: 1rem 11rem;
   color: gray;
+  text-transform: uppercase;
 }
 
 .form {
@@ -210,6 +217,7 @@ a.active {
   height: 3rem;
   border-radius: 5px;
   margin-left: 4rem;
+  cursor: pointer;
 }
 
 .loading {

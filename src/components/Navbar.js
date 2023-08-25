@@ -10,7 +10,7 @@ function Navbar() {
           <h1>BookStore CMS</h1>
         </li>
         <li className="navbar-brand">
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">BOOKS</NavLink>
         </li>
         <li className="navbar-brand">
           <NavLink to="/categories">categories</NavLink>
