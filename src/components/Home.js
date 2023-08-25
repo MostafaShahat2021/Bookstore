@@ -5,7 +5,7 @@ import BookList from './BookList';
 
 function Home() {
   return (
-    <div>
+    <div className="home">
       <BookList />
       <Form />
     </div>
