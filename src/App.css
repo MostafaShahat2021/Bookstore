@@ -63,7 +63,7 @@ a.active {
   margin: 0 auto;
 }
 
-.book-container {
+.book-container { 
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -71,6 +71,10 @@ a.active {
   background-color: #fff;
   margin-bottom: 1rem;
   box-shadow: 2px 2px 3px -2px rgba(156, 155, 155, 0.75);
+}
+
+.book-container:hover {
+  border: 1px solid #49a0ec;
 }
 
 .category {
@@ -96,7 +100,7 @@ a.active {
   margin: 0.188rem 0.938rem 0.125rem 0;
   border: none;
   background-color: white;
-  border-right: 1px solid gray;
+  border-right: 1px solid #e8e8e8;
   width: 5rem;
   padding-right: 1rem;
   text-align: center;
@@ -108,7 +112,7 @@ a.active {
 }
 
 .btn-2 {
-  border-right: 1px solid gray;
+  border-right: 1px solid #e8e8e8;
   cursor: pointer;
 }
 
@@ -153,6 +157,11 @@ a.active {
   color: gray;
 }
 
+.border {
+  border: 1px solid #e8e8e8;
+  height: 3.7rem;
+}
+
 .current-chapter {
   color: gray;
   margin-bottom: 0.3rem;
@@ -172,6 +181,7 @@ a.active {
   color: #fff;
   width: 10rem;
   height: 2.5rem;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }

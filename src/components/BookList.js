@@ -22,7 +22,7 @@ function BookList() {
           </h4>
         )}
         {books.map((book) => (
-          <div className="add-book-container" key={book.item_id}>
+          <div className="add-book-container hover" key={book.item_id}>
             <div className="book-container">
               <div className="book-data">
                 <p className="category">Computer Science</p>
@@ -53,6 +53,7 @@ function BookList() {
                   </div>
                 </div>
               </div>
+              <div className="border" />
               <div className="chapter-container">
                 <p className="current-chapter">current chapter</p>
                 <p className="chpter">chapter 17</p>
