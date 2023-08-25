@@ -228,6 +228,7 @@ a.active {
   border-radius: 5px;
   margin-left: 4rem;
   cursor: pointer;
+  border: none;
 }
 
 .loading {
