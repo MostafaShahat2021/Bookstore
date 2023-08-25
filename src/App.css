@@ -63,7 +63,7 @@ a.active {
   margin: 0 auto;
 }
 
-.book-container { 
+.book-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
