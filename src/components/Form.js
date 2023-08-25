@@ -25,9 +25,9 @@ function Form() {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h2 className="form-title">Add new book</h2>
-      <form className="form-container">
+      <form className="form">
         <input
           className="title-input"
           type="text"
@@ -44,7 +44,9 @@ function Form() {
           onChange={(e) => setauthor(e.target.value)}
           required
         />
-        <button type="submit" onClick={handelAddBookClick}>Add Book</button>
+        <button type="submit" className="add-btn" onClick={handelAddBookClick}>
+          Add Book
+        </button>
       </form>
     </div>
   );

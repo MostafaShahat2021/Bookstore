@@ -9,6 +9,15 @@ body {
   background-color: #f5f6fa;
 }
 
+.home {
+  width: 95%;
+  margin: o auto;
+  /* background-color: #fff; */
+  margin-bottom: 1rem;
+  -webkit-box-shadow: 7px 11px 7px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 11px 7px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 11px 7px -3px rgba(0, 0, 0, 0.75);
+}
 nav {
   /* border: 1px solid blue; */
   display: flex;
@@ -162,25 +171,48 @@ a.active {
   border-radius: 5px;
 }
 
-.form-title,
-.add-book-title {
-  margin: 2rem auto;
-  width: 50%;
-  text-align: center;
-}
-
 .form-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
+  height: 13rem;
 }
 
-.title-input,
-.author-input {
-  width: 20%;
+.form-title {
+  margin: 2rem 11rem;
+  color: gray;
 }
+
+.form {
+  /* border: 1px solid blue; */
+  margin: 1rem 10rem;
+  height: 5rem;
+}
+
+.title-input {
+  border: 1px solid rgb(226, 221, 221);
+  height: 2.3rem;
+  margin: 2rem;
+  width: 32rem;
+}
+
+.author-input {
+  border: 1px solid rgb(226, 221, 221);
+  height: 2.3rem;
+  margin: 2rem;
+  width: 10rem;
+}
+
+.title-input , .author-input {
+  padding: 1rem;
+}
+
+.add-btn {
+  background-color: #0290ff;
+  color: #fff;
+  width: 10.4rem;
+  height: 3rem;
+  border-radius: 5px;
+  margin-left: 4rem;
+}
+
 
 .loading {
   width: 80%;
