@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import { CircularProgressbar } from 'react-circular-progressbar';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks, deleteBook } from '../redux/books/booksSlice';
 
@@ -13,7 +12,6 @@ function BookList() {
 
   return (
     <div>
-      {/* <h2 className="add-book-title">Book List</h2> */}
       <div className="books-container">
         {isLoading && <h4 className="loading">Loading...</h4>}
         {error && <h4 className="loading">Failed to fetch books</h4>}
