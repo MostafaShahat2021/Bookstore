@@ -50,7 +50,7 @@ function BookList() {
                     <span className="blue-circle" />
                   </div>
                   <div className="percentage-sign">
-                    <h3>69%</h3>
+                    <h3>64%</h3>
                     <p>Completed</p>
                   </div>
                 </div>

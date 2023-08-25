@@ -26,6 +26,7 @@ function Form() {
 
   return (
     <div className="form-container">
+      <hr />
       <h2 className="form-title">Add new book</h2>
       <form className="form">
         <input

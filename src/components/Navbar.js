@@ -17,7 +17,7 @@ function Navbar() {
         </li>
       </ul>
       <div className="user-icon">
-        <FaUser color="blue" size={20} />
+        <FaUser className="icon" size={25} />
       </div>
     </nav>
   );
