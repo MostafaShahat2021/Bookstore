@@ -11,9 +11,10 @@ body {
 
 .home {
   width: 95%;
-  margin: o auto;
+  margin: 0 auto;
   margin-bottom: 1rem;
 }
+
 nav {
   display: flex;
   justify-content: space-evenly;
@@ -108,6 +109,7 @@ a.active {
 .btn-2 {
   border-right: 1px solid gray;
 }
+
 .btn-3 {
   border: none;
 }
@@ -140,7 +142,7 @@ a.active {
 
 .percentage-sign h3 {
   font-size: 2rem;
-  font-weight:300;
+  font-weight: 300;
   margin-bottom: 0;
 }
 
@@ -150,6 +152,7 @@ a.active {
 
 .current-chapter {
   color: gray;
+  margin-bottom: 0.3rem;
 }
 
 .chpter {
@@ -172,7 +175,7 @@ a.active {
 }
 
 .form-title {
-  margin: 2rem 11rem;
+  margin: 1rem 11rem;
   color: gray;
 }
 
@@ -214,6 +217,7 @@ a.active {
   margin: 0 auto;
   text-align: center;
 }
+
 hr {
   border-top: 0.2px solid;
   color: #dcdee4;
